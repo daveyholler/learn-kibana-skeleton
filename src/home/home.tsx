@@ -1,9 +1,10 @@
 import { useState } from 'react';
-
 import {
   EuiButton,
   EuiPageTemplate,
 } from '@elastic/eui';
+
+import { EpisodeList } from './episode_list';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('tabOne');
@@ -37,7 +38,7 @@ export default function Home() {
     >
       <>
         { activeTab === 'tabOne' ? (
-          <p>All the episodes...</p>
+          <EpisodeList />
         ) : (
           <p>All the related content...</p>
         ) }
