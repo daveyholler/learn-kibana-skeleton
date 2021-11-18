@@ -1,9 +1,9 @@
 import { EuiCard, EuiFlexGroup, EuiFlexItem } from '@elastic/eui';
 import {
   Episode,
-  Show,
   EPISODES
 } from './data';
+import { EpisodeFlyout } from './episode_flyout';
 
 export const EpisodeList: React.FC = () => {
   return (
@@ -20,6 +20,11 @@ export const EpisodeList: React.FC = () => {
             }
             title={episode.title}
             description={episode.plot.slice(0, 50)}
+            footer={
+              <EpisodeFlyout
+                episode={episode}
+              />
+            }
           />
         </EuiFlexItem>
       ))}
